@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import './login.css';
 
+import { useNavigate } from 'react-router-dom'
+
 import { MdEmail, MdVpnKey } from "react-icons/md";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 
 function Login() {
+    const navigate = useNavigate()
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [show, setShow] = useState(false)
@@ -12,6 +16,10 @@ function Login() {
     const handleClick = (e) => {
         e.preventDefault()
         setShow(!show);
+    }
+
+    const handleCadastro = () => {
+       navigate('/cadastro')
     }
 
     return (
@@ -66,7 +74,10 @@ function Login() {
 
                 <h4>Não tenho conta!</h4>
 
-                <button type="submit">
+                <button 
+                onClick={handleCadastro}
+                type="submit"
+                >
                     Cadastrar
                 </button>
             </div>
