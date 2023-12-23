@@ -22,6 +22,10 @@ function Login() {
        navigate('/cadastro')
     }
 
+    const handleEntrar = () => {
+        navigate('/dashboard')
+     }
+
     return (
         <div className='login'>
             <div className='login-logo'>
@@ -32,7 +36,7 @@ function Login() {
             </div>
 
             <div className="login-right">
-                <h1>Acessar App</h1>
+                <h1>Login</h1>
 
                 <div className="login-loginInputEmail">
                 <MdEmail />
@@ -68,8 +72,11 @@ function Login() {
                     </div>
                 </div>
 
-                <button type="submit">
-                    Entrar
+                <button 
+                    type="submit"
+                    onClick={handleEntrar}
+                    >
+                        Entrar
                 </button>
 
                 <h4>Não tenho conta!</h4>
